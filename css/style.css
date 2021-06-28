@@ -1,0 +1,40 @@
+html{
+    --red:#d20a11;
+    --black:#222;
+    --ice:#F0F8FF;
+
+    font-size: 62.5%;
+}
+
+.sr-only{
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden; 
+    clip-path: rect(0,0,0,0); 
+    white-space: nowrap;
+    border-width: 0;
+} /*Código de auxilio para usuarios leitores de tela ( Screen reader Only )*/
+
+body{
+    background-color: var(--ice);
+    font-family: Helvetica, sans-serif;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 2em;
+}
+
+#title{
+    color: var(--black);
+    width: 13em;
+    margin: 1em auto;
+}
+#title strong{
+    color: var(--red);
+}
+
+li{
+    list-style: none;
+}
