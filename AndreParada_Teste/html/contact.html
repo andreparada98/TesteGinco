@@ -24,33 +24,41 @@
     </header>
 
     <main id="conteudo">
-        <h1 id="title">Teste de formulário - <strong>André</strong></h2>
+        <h1 id="title">Teste de estágio - <strong>André</strong></h2>
         <p id="subtitle">Cadastre seu nome, e clique em Enviar.</p>
         
         <form action="">
             <fieldset>
                 <div id="primaryKey">
                     <label for-id="client-name">Digite seu nome</label>
-                    <input type="text"  placeholder="Digite seu nome" id="client-name" required>
-                    <ul></ul>
+                    <input 
+                        type="text"  
+                        placeholder="Digite seu nome" 
+                        id="client-name" 
+                        required>
                 </div>
                 
                 <div class="answer">
                     <div>
                         <label for="cpf" class="sr-only">CPF</label>
-                        <input type="text" id="cpf" placeholder="000.000.000.00" pattern="[0-9]{11}" disabled>
+                        <input 
+                            type="text" 
+                            id="cpf" 
+                            placeholder="000.000.000.00" 
+                            pattern="[0-9]{11}" 
+                            disabled>
                     </div>
 
                     <div>
                         <label for="born-date" class="sr-only">Data de Nascimento</label>
-                        <input type="date" id="born-date" disabled>
+                        <input 
+                        type="date" 
+                        id="born-date" 
+                        disabled>
                     </div>
 
                 </div>
-  
-                <button>
-                    Enviar
-                </button>
+                <button name="data" type="button" onclick="distribuiCaracter()">Pesquisar</button>
             </fieldset>
         </form>
 
@@ -85,7 +93,7 @@
               </tr>
 
               <tr>
-                <td>Adilson Amilton</td>
+                <td>Humberto Amilton</td>
                 <td>15115215366</td>
                 <td>05/02/1955</td>
               </tr>

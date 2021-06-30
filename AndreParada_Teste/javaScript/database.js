@@ -1,29 +1,32 @@
-
-
-function inicia(){
-    let cpf = document.getElementById('cpf')
-    let nasc = document.getElementById('born')
-    //criacao de um vetor com dados de clientes
 const database = [
-    {name: "André Parada", cpf: "00011122233", born: "01/01/1991"},
-    {name: "Joao Leite", cpf: "33344455566", born: "02/02/1982"},
-    {name: "Ana Silva", cpf: "77788899910", born: "03/03/1973"},
-    {name: "Betania Oliveira", cpf: "11122233344", born: "04/04/1964"},
-    {name:"Humberto Amilton", cpf:"15115215366", born:"05/02/1955"}
-];
-    //var input = document.getElementById('nomeid')
-    document.querySelector('input#client-name').addEventListener("blur", event =>{
-        //verifica se o cliente digitado esta cadastrado 
-        //caso esteja seus dados sao preenchidos automaticamente
-        for( let i = 0; i< database.length; i++){
-            if(database[i].nome == event.target.value){
-                cpf.value = database[i].cpf
-                nasc.value = database[i].nasc
-                break
-            }
-        }
+    {name: "André Parada", cpf: "00011122233", born: "1991-01-01"},
+    {name: "Joao Leite", cpf: "33344455566", born: "1982-02-02"},
+    {name: "Ana Silva", cpf: "77788899910", born: "1973-03-03"},
+    {name: "Betania Oliveira", cpf: "11122233344", born: "1964-04-04"},
+    {name:"Humberto Amilton", cpf:"15115215366", born:"1955-05-05"}
+]/*Definindo o DataSet*/ 
 
-    });
+armazenar = 0;
+function distribuiCaracter() 
+{                                      //Função presentet no Onblur, Iniciando minha pesquisa.
+    var caracter = document.getElementById('client-name').value     //Seleciona o valor digitado
+    caracter = caracter.toLowerCase();                              //Coloco o Caracter em minusculo, para não ter erros na procura
+
+   for(var i=0; i<database.length; i++) {                              //Loop para percorrer o database
+        database[i].name = database[i].name.toLowerCase();              //Coloca todo o database name em minusculo
+        if(database[i].name === caracter) {                             //Condicional para acharmos o i
+            document.getElementById('cpf').value = database[i].cpf;     //trocando o valor do CPF no input
+            document.getElementById('born-date').value = database[i].born;  // trocando o valor da data de nascimento no input
+            armazenar = i;
+    }
+    
+}       
+        if(database[armazenar].name != caracter){
+            document.getElementById('cpf').value = '000.000.000.00';
+            document.getElementById('born-date').value = 'dd/mm/aaaa';
+
+            alert("Usuário Inexistente");
 }
 
-window.addEventListener("load", inicia)
+}
+
